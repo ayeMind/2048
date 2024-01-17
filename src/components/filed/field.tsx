@@ -121,7 +121,7 @@ export default function Field({ size }: { size: number }) {
     if (emptyCells.length > 0) {
       const randomIndex = Math.floor(Math.random() * emptyCells.length);
       const { row, col } = emptyCells[randomIndex];
-      grid[row][col] = Math.random() < 0.9 ? 2 : 4;
+      grid[row][col] = Math.random() < 0.7 ? 2 : 4; // 70% шанс на 2, 30% на 4
     }
   };
 
