@@ -4,7 +4,7 @@ const Menu = () => {
   return (
     <div className="relative content">
       <div className="flex items-center justify-center w-screen h-screen">
-        <h1 className="absolute -translate-x-1/2 top-10 left-1/2">
+        <h1 className="absolute -translate-x-1/2 top-[135px] left-1/2">
           Выберите размер поля
         </h1>
         <div className="grid grid-cols-3 gap-[64px]">

@@ -15,9 +15,13 @@ export default function Field({ size }: { size: number }) {
   let [titleText, setTitleText] = useState('2048');
   
 
-  if (size <= 5) {
+  if (size == 3) {
+    cellSize = 200;
+  } else if (size == 4) {
+    cellSize = 150;
+  } else if (size == 5) {
     cellSize = 120;
-  } else if (size <= 6) {
+  } else if (size == 6) {
     cellSize = 90;
   } else if (size == 7) {
     cellSize = 80;
@@ -306,7 +310,7 @@ export default function Field({ size }: { size: number }) {
             Restart
            </button>
           ) : (
-            <Link to='/' className='absolute flex items-center justify-center -translate-x-1/2 bottom-10 left-1/2 text-center bg-[#1e1432] w-96 h-20 rounded-xl select-none hover:bg-[#19112b] text-[48px]'>
+            <Link to='/' className='absolute flex items-center justify-center -translate-x-1/2 bottom-8 left-1/2 text-center bg-[#1e1432] w-96 h-20 rounded-xl select-none hover:bg-[#19112b] text-[48px]'>
              Back
            </Link>
           )}
