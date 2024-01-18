@@ -1,4 +1,4 @@
-export default function Cell({ size, value }: { size: number; value: number }) {
+export default function Cell({ size, value, fieldSize }: { size: number; value: number, fieldSize: number }) {
   const color = (value: number) => {
     switch (value) {
       case 0:
@@ -52,6 +52,14 @@ export default function Cell({ size, value }: { size: number; value: number }) {
       default:
         resultSize = 16;
         break;
+    }
+
+    if (fieldSize === 3) {
+      resultSize *= 1.5;
+    } else if (fieldSize === 4 || fieldSize === 5) {
+      resultSize *= 1.25;
+    } else if (fieldSize === 8) {
+      resultSize *= 0.75;
     }
 
     return `${resultSize}px`;

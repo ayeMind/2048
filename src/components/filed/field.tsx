@@ -293,6 +293,7 @@ export default function Field({ size }: { size: number }) {
                   key={`${rowIndex}-${colIndex}`}
                   size={cellSize}
                   value={cell}
+                  fieldSize={size}
                 />
               ))
             )}
