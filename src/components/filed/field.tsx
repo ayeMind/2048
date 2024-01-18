@@ -1,16 +1,19 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 import Cell from "../cell/cell";
-import Button from "../button/button";
 import { Link } from "react-router-dom";
+import isMovePossible from "./isMovePossible";
 
 export default function Field({ size }: { size: number }) {
-  const [grid, setGrid] = useState(() => {
-    return Array.from({ length: size }, () =>
-      Array.from({ length: size }, () => 0)
-    );
-  });
+
+  const defaultArray = Array.from({ length: size }, () =>
+  Array.from({ length: size }, () => 0)
+);
+
+  const [grid, setGrid] = useState(defaultArray);
 
   let cellSize = 0;
+  let [titleText, setTitleText] = useState('2048');
+  
 
   if (size <= 5) {
     cellSize = 120;
@@ -143,11 +146,15 @@ export default function Field({ size }: { size: number }) {
     }
   };
 
-  useEffect(() => {
-    const newGrid = JSON.parse(JSON.stringify(grid));
+  const startTiles = (newGrid: number[][]) => {
     addRandomTile(newGrid);
     addRandomTile(newGrid);
     setGrid(newGrid);
+  };
+
+  useEffect(() => {
+    const newGrid = JSON.parse(JSON.stringify(grid));
+    startTiles(newGrid)
   }, []);
 
   useEffect(() => {
@@ -239,7 +246,16 @@ export default function Field({ size }: { size: number }) {
       return newGrid;
     };
 
+    const checkMovesAfterRender = () => {
+      if (!isMovePossible(size, grid)) {
+        setTitleText('Game over');  
+      }
+    };
+  
+    const timeoutId = setTimeout(checkMovesAfterRender, 0);
+  
     return () => {
+      clearTimeout(timeoutId);
       window.removeEventListener("keydown", handleKeyPress);
     };
   }, [grid]);
@@ -252,7 +268,7 @@ export default function Field({ size }: { size: number }) {
             className="absolute transform -translate-x-1/2 left-1/2"
             style={{ top: `${titleTop}px` }}
           >
-            2048
+            {titleText}
           </h1>
 
           <div
@@ -278,9 +294,22 @@ export default function Field({ size }: { size: number }) {
             )}
           </div>
 
-          <Link to='/' className='absolute flex items-center justify-center -translate-x-1/2 bottom-10 left-1/2 text-center bg-[#1e1432] w-96 h-20 rounded-xl select-none hover:bg-[#19112b] text-[48px]'>
-                Back
-          </Link>
+          
+
+          {titleText == 'Game over' ? (
+            <button onClick={() => 
+              {setGrid(defaultArray); 
+               setTitleText('2048');
+               startTiles(defaultArray);
+              }}
+            className='absolute flex items-center justify-center -translate-x-1/2 bottom-10 left-1/2 text-center bg-[#1e1432] w-96 h-20 rounded-xl select-none hover:bg-[#19112b] text-[48px]'>
+            Restart
+           </button>
+          ) : (
+            <Link to='/' className='absolute flex items-center justify-center -translate-x-1/2 bottom-10 left-1/2 text-center bg-[#1e1432] w-96 h-20 rounded-xl select-none hover:bg-[#19112b] text-[48px]'>
+             Back
+           </Link>
+          )}
 
         </div>
       </div>
