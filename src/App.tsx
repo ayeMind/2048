@@ -1,5 +1,5 @@
 import './App.css';
-import Field from './components/filed/field';
+import Field from './components/field/field';
 import Menu from './components/menu/menu';
 
 import {
