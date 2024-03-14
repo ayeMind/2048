@@ -181,8 +181,6 @@ export default function Field({ size }: { size: number }) {
   useEffect(() => {
     window.addEventListener("keydown", handleKeyPress);
 
-    window.addEventListener("")
-
     const checkMovesAfterRender = () => {
       if (!isMovePossible(size, grid)) {
         setTitleText('Game over');  
