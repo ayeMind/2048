@@ -217,7 +217,7 @@ export default function Field({ size }: { size: number }) {
           ></div>
 
           <div
-            className="grid sm:gap-2 md:gap-3 lg:gap-4"
+            className="fixed grid transform -translate-x-1/2 -translate-y-1/2 sm:gap-2 md:gap-3 lg:gap-4 top-1/2 left-1/2 "
             style={{
               gridTemplateColumns: `repeat(${size}, minmax(0, 1fr))`,
               gap: `${gap}px`,
