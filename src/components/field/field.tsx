@@ -201,7 +201,7 @@ export default function Field({ size }: { size: number }) {
   }, [grid]);
 
   return (
-    <div className="relative content" {...swipeHandlers}>
+    <div className="relative overflow-hidden content" {...swipeHandlers}>
       <div className="flex items-center justify-center w-screen h-screen">
         <div>
           <h1
