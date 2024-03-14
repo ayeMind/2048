@@ -16,7 +16,7 @@ export default function Field({ size }: { size: number }) {
   let cellSize = 0;
   let [titleText, setTitleText] = useState('2048');
   
-  const userWidthCoef = window.innerWidth / 1920;
+  const userWidthCoef = window.innerWidth / 1024;
 
   if (size == 3) {
     cellSize = 200 * userWidthCoef;

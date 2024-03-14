@@ -33,7 +33,7 @@ export default function Cell({ size, value, fieldSize }: { size: number; value: 
     const numDigits = Math.floor(Math.log10(Math.abs(value)) + 1);
 
 
-    const userWidthCoef = window.innerWidth / 1920;
+    const userWidthCoef = window.innerWidth / 1024;
 
     let resultSize;
     switch (numDigits) {
