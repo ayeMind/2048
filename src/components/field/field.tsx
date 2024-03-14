@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import Cell from "../cell/cell";
 import { Link } from "react-router-dom";
-import isMovePossible from "./isMovePossible";
-
 import { useSwipeable } from 'react-swipeable';
+
+import isMovePossible from "./isMovePossible";
+import Cell from "../cell/cell";
 
 export default function Field({ size }: { size: number }) {
 
@@ -16,19 +16,20 @@ export default function Field({ size }: { size: number }) {
   let cellSize = 0;
   let [titleText, setTitleText] = useState('2048');
   
+  const userWidthCoef = window.innerWidth / 1920;
 
   if (size == 3) {
-    cellSize = 200;
+    cellSize = 200 * userWidthCoef;
   } else if (size == 4) {
-    cellSize = 150;
+    cellSize = 150 * userWidthCoef;;
   } else if (size == 5) {
-    cellSize = 120;
+    cellSize = 120 * userWidthCoef;;
   } else if (size == 6) {
-    cellSize = 90;
+    cellSize = 90 * userWidthCoef;;
   } else if (size == 7) {
-    cellSize = 80;
+    cellSize = 80 * userWidthCoef;;
   } else if (size <= 9) {
-    cellSize = 70;
+    cellSize = 70 * userWidthCoef;;
   }
 
   const gap = 15;

@@ -32,25 +32,28 @@ export default function Cell({ size, value, fieldSize }: { size: number; value: 
     // Определение размера шрифта в зависимости от количества цифр в числе
     const numDigits = Math.floor(Math.log10(Math.abs(value)) + 1);
 
+
+    const userWidthCoef = window.innerWidth / 1920;
+
     let resultSize;
     switch (numDigits) {
       case 1:
-        resultSize = 48;
+        resultSize = 48 * userWidthCoef;
         break;
       case 2:
-        resultSize = 48;
+        resultSize = 48 * userWidthCoef;
         break;
       case 3:
-        resultSize = 42;
+        resultSize = 42 * userWidthCoef;
         break;
       case 4:
-        resultSize = 32;
+        resultSize = 32 * userWidthCoef;
         break;
       case 5:
-        resultSize = 24;
+        resultSize = 24 * userWidthCoef;
         break;
       default:
-        resultSize = 16;
+        resultSize = 16 * userWidthCoef;
         break;
     }
 
