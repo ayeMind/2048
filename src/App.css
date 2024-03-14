@@ -16,7 +16,7 @@ body {
   line-height: 1.1;
   text-align: center;
   flex-direction: column;
-  background-image: linear-gradient(to bottom, #020917, #101725);
+  /* background-image: linear-gradient(to bottom, #020917, #101725); */
 }
 
 .content h1 {

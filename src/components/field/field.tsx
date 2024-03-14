@@ -205,14 +205,14 @@ export default function Field({ size }: { size: number }) {
       <div className="flex items-center justify-center w-screen h-screen">
         <div>
           <h1
-            className="absolute text-2xl font-bold transform -translate-x-1/2 left-1/2 sm:text-3xl md:text-4xl lg:text-5xl"
+            className="fixed text-2xl font-bold transform -translate-x-1/2 left-1/2 sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ top: `${titleTop}px` }}
           >
             {titleText}
           </h1>
 
           <div
-            className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#030914] -z-10 rounded-lg shadow-[0_0_35px_3px_#483179] sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80`}
+            className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#030914] -z-10 rounded-lg shadow-[0_0_35px_3px_#483179]`}
             style={{ width: `${squareSize}px`, height: `${squareSize}px` }}
           ></div>
 
@@ -242,14 +242,14 @@ export default function Field({ size }: { size: number }) {
                 setTitleText('2048');
                 startTiles(defaultArray);
               }}
-              className="absolute flex items-center justify-center -translate-x-1/2 bottom-10 left-1/2 text-center bg-[#1e1432] w-72 sm:w-80 md:w-96 h-16 sm:h-20 rounded-xl select-none hover:bg-[#19112b] text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+              className="fixed flex items-center justify-center -translate-x-1/2 bottom-10 left-1/2 text-center bg-[#1e1432] w-72 sm:w-80 md:w-96 h-16 sm:h-20 rounded-xl select-none hover:bg-[#19112b] text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
             >
               Restart
             </button>
           ) : (
             <Link
               to="/"
-              className="absolute flex items-center justify-center -translate-x-1/2 bottom-20 sm:bottom-8 left-1/2 text-center bg-[#1e1432] w-72 sm:w-80 md:w-96 h-16 sm:h-20 rounded-xl select-none hover:bg-[#19112b] text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+              className="fixed flex items-center justify-center -translate-x-1/2 bottom-20 sm:bottom-8 left-1/2 text-center bg-[#1e1432] w-72 sm:w-80 md:w-96 h-16 sm:h-20 rounded-xl select-none hover:bg-[#19112b] text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
             >
               Back
             </Link>
