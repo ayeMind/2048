@@ -1,4 +1,12 @@
-export default function Cell({ size, value, fieldSize }: { size: number; value: number, fieldSize: number }) {
+export default function Cell({
+  size,
+  value,
+  fieldSize,
+}: {
+  size: number;
+  value: number;
+  fieldSize: number;
+}) {
   const color = (value: number) => {
     switch (value) {
       case 0:
@@ -32,8 +40,10 @@ export default function Cell({ size, value, fieldSize }: { size: number; value: 
     // Определение размера шрифта в зависимости от количества цифр в числе
     const numDigits = Math.floor(Math.log10(Math.abs(value)) + 1);
 
-
-    const userWidthCoef = window.innerWidth / 1024;
+    let userWidthCoef = window.innerWidth / 1024;
+    if (window.innerWidth > 1024) {
+      userWidthCoef = 1;
+    }
 
     let resultSize;
     switch (numDigits) {
@@ -70,16 +80,16 @@ export default function Cell({ size, value, fieldSize }: { size: number; value: 
 
   return (
     <div
-      className='rounded-md flex items-center justify-center text-center font-[750] select-none'
+      className="rounded-md flex items-center justify-center text-center font-[750] select-none"
       style={{
         width: `${size}px`,
         height: `${size}px`,
         backgroundColor: color(value),
         fontSize: calculateFontSize(value),
-        whiteSpace: 'nowrap',
+        whiteSpace: "nowrap",
       }}
     >
-      {value !== 0 ? value : ''}
+      {value !== 0 ? value : ""}
     </div>
   );
 }

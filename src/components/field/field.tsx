@@ -16,7 +16,11 @@ export default function Field({ size }: { size: number }) {
   let cellSize = 0;
   let [titleText, setTitleText] = useState('2048');
   
-  const userWidthCoef = window.innerWidth / 1024;
+  let userWidthCoef = window.innerWidth / 1920;
+  if (window.innerWidth > 1680) {
+    userWidthCoef = 1
+  }
+
 
   if (size == 3) {
     cellSize = 200 * userWidthCoef;
@@ -201,7 +205,7 @@ export default function Field({ size }: { size: number }) {
       <div className="flex items-center justify-center w-screen h-screen">
         <div>
           <h1
-            className="absolute text-2xl transform -translate-x-1/2 left-1/2 sm:text-3xl md:text-4xl lg:text-5xl"
+            className="absolute text-2xl font-bold transform -translate-x-1/2 left-1/2 sm:text-3xl md:text-4xl lg:text-5xl"
             style={{ top: `${titleTop}px` }}
           >
             {titleText}
