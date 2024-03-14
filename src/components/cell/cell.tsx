@@ -40,7 +40,7 @@ export default function Cell({
     // Определение размера шрифта в зависимости от количества цифр в числе
     const numDigits = Math.floor(Math.log10(Math.abs(value)) + 1);
 
-    let userWidthCoef = window.innerWidth / 1024;
+    let userWidthCoef = window.innerWidth / 1680;
     if (window.innerWidth > 1024) {
       userWidthCoef = 1;
     }
