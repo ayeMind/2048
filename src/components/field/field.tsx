@@ -249,7 +249,7 @@ export default function Field({ size }: { size: number }) {
           ) : (
             <Link
               to="/"
-              className="absolute flex items-center justify-center -translate-x-1/2 bottom-8 left-1/2 text-center bg-[#1e1432] w-72 sm:w-80 md:w-96 h-16 sm:h-20 rounded-xl select-none hover:bg-[#19112b] text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
+              className="absolute flex items-center justify-center -translate-x-1/2 bottom-20 sm:bottom-8 left-1/2 text-center bg-[#1e1432] w-72 sm:w-80 md:w-96 h-16 sm:h-20 rounded-xl select-none hover:bg-[#19112b] text-2xl sm:text-3xl md:text-4xl lg:text-5xl"
             >
               Back
             </Link>

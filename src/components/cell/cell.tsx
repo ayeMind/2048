@@ -80,7 +80,7 @@ export default function Cell({
 
   return (
     <div
-      className="rounded-md flex items-center justify-center text-center font-[750] select-none"
+      className="rounded-sm md:rounded-md flex items-center justify-center text-center font-[750] select-none"
       style={{
         width: `${size}px`,
         height: `${size}px`,
