@@ -212,7 +212,7 @@ export default function Field({ size }: { size: number }) {
           </h1>
 
           <div
-            className={`absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#030914] -z-10 rounded-lg shadow-[0_0_35px_3px_#483179] sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80`}
+            className={`fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 bg-[#030914] -z-10 rounded-lg shadow-[0_0_35px_3px_#483179] sm:w-64 sm:h-64 md:w-72 md:h-72 lg:w-80 lg:h-80`}
             style={{ width: `${squareSize}px`, height: `${squareSize}px` }}
           ></div>
 
